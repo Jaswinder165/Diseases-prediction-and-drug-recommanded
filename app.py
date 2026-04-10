@@ -32,6 +32,7 @@ class Config:
 # 📥 DOWNLOAD NLTK RESOURCES
 # ==============================
 
+@st.cache_resource
 def download_nltk_resources():
     try:
         nltk.data.find('corpora/wordnet')
