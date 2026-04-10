@@ -1,7 +1,11 @@
 streamlit
 pandas
-scikit-learn
+numpy
+joblib
 nltk
+plotly
+beautifulsoup4
+scikit-learn
 
 blinker==1.9.0
 click==8.3.2
