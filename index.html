@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Recommendation System</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💊</text></svg>">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            background: transparent; 
+            padding: 0; 
+            border-radius: 0; 
+            box-shadow: none; 
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 95vw; 
+            max-width: 1400px; 
+            height: 90vh; 
+            max-height: 900px; 
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px; 
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        #universe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .iframe-container {
+                width: 98vw; 
+                height: 85vh; 
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="universe"></div>
+    <div class="container">
+        <h1>Drug Recommendation System</h1>
+        <div class="iframe-container">
+            <iframe
+                src="https://puneeth1-disease-prediction-and-drug-recommendat-1c3c97e.hf.space"
+                allow="accelerometer; camera; microphone; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
+        </div>
+    </div>
+
+    <script>
+        const universe = document.getElementById('universe');
+        const starCount = 300;
+        const maxTime = 30;
+
+        function createStar() {
+            const star = document.createElement('div');
+            star.className = 'star';
+            
+            const size = Math.random() * 3 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            
+            const startX = window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            
+            star.style.transform = `translate(${startX}px, ${y}px)`;
+            universe.appendChild(star);
+
+            const speed = 1000 * (Math.random() * maxTime + 1);
+            const animation = star.animate([
+                { transform: `translate(${startX}px, ${y}px)` },
+                { transform: `translate(-50px, ${y}px)` }
+            ], {
+                duration: speed,
+                iterations: Infinity,
+                delay: Math.random() * -speed
+            });
+        }
+
+        for (let i = 0; i < starCount; i++) {
+            createStar();
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            universe.innerHTML = '';
+            for (let i = 0; i < starCount; i++) {
+                createStar();
+            }
+        });
+    </script>
+</body>
+</html>
