@@ -1,0 +1,17 @@
+from sklearn.feature_extraction.text import TfidfVectorizer
+import joblib
+
+# Example training corpus
+corpus = [
+    "fever headache nausea",
+    "cough sore throat",
+    "chest pain shortness of breath"
+]
+
+# Fit TF-IDF
+vectorizer = TfidfVectorizer(stop_words='english')
+vectorizer.fit(corpus)
+
+# Save to file
+joblib.dump(vectorizer, "model/tfidfvectorizer.pkl")
+

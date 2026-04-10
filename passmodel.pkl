@@ -1,0 +1,3 @@
+class Config:
+    MODEL_PATH = 'model/passmodel.pkl'
+    TOKENIZER_PATH = 'model/tfidfvectorizer.pkl'
