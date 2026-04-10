@@ -1,5 +1,5 @@
 # 🏥 Disease Prediction & Drug Recommendation System
-### Final Year Major Project (2024)
+### Final Year Major Project (2026)
 ### Department of Artificial Intelligence and Data Science (AI & DS)
 
 A machine learning system that predicts diseases based on symptoms and recommends medications using patient review data analysis.
@@ -108,9 +108,9 @@ Disease-Prediction-and-Drug-Recommendation-Prototype/
 This system is a prototype for educational purposes. Always consult healthcare professionals for medical advice.
 
 ## 👨‍💻 Project Team
-- Student Name: Puneeth Raj
-- Roll Number: 21831A7251
-- Supervisor: Sheeltal Kundra
+- Student Name:Jaswinder singh
+- Roll Number: 2226233
+- Supervisor: Anmol rana
 - Department: Artificial Intelligence and Data Science (AI & DS)
 
 ## 📧 Contact
